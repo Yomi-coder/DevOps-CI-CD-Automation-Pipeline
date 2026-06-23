@@ -1,6 +1,10 @@
 pipeline{
     agent any
 
+    triggers {
+        githubPush()
+    }
+
     environment{
         DOCKER_IMAGE = "dhinesh2001/full-stack-1"
         IMAGE_TAG = "${env.BUILD_NUMBER}"
