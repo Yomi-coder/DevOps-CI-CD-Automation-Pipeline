@@ -12,12 +12,14 @@ pipeline{
     }
 
     stages{
-        stage('Clean Workspace'){
-            steps{ cleanWs()}
-        }
-    }
 
-    stages{
+        stage('Clean Workspace'){
+            steps{
+                cleanWs()
+            }
+        }
+
+
         stage('Checkout Code'){
             steps{
                 git branch : 'main', url: 'https://github.com/Yomi-coder/DevOps-CI-CD-Automation-Pipeline.git'
@@ -32,7 +34,7 @@ pipeline{
             steps{
                 withSonarQubeEnv('sonarqube') {
                     sh 'sonar-scanner \
-                        -Dsonar.projectKeys=full-stack-1 \
+                        -Dsonar.projectKey=full-stack-1 \
                         -Dsonar.sources=. \
                         -Dsonar.host.url=http://localhost:9000 \
                         -Dsonar.login=squ_8cf442819d824a72acf72b49ff5e23d87ee8b1ff'
