@@ -30,7 +30,7 @@ pipeline{
                 dependencyCheck (
                     odcInstallation: 'dependency-check',
                     additionalArguments: '--scan ./', 
-                    stopbuild:true
+                    stopBuild: true
                     )
                 dependencyCheckPublisher pattern: '**/dependency-check-report.xml'}
         }
