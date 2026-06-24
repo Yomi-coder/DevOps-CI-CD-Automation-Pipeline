@@ -1,9 +1,6 @@
 pipeline{
     agent any
 
-    triggers {
-        githubPush()
-    }
 
     environment{
         DOCKER_IMAGE = "dhinesh2001/full-stack-1"
