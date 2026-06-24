@@ -116,6 +116,6 @@ If GitHub delivery shows success but Jenkins doesn’t trigger reliably:
 - Confirm Jenkins SCM URL matches the repo in the webhook payload
 - Confirm secrets match (if a secret is configured)
 
-project
+projects
 
 
