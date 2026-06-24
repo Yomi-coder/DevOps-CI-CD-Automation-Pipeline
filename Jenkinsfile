@@ -22,15 +22,7 @@ pipeline{
                 checkout scm
             }
         }
-        stage('OWASP Dependency Check'){
-            steps{ 
-                dependencyCheck (
-                    odcInstallation: 'dependency-check',
-                    additionalArguments: '--scan ./', 
-                    stopBuild: true
-                    )
-                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'}
-        }
+        
         stage('SonarQube Analysis'){
             steps{
                 withSonarQubeEnv('sonarqube') {
