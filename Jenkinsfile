@@ -22,7 +22,7 @@ pipeline{
 
         stage('Checkout Code'){
             steps{
-                git branch : 'main', url: 'https://github.com/Yomi-coder/DevOps-CI-CD-Automation-Pipeline.git'
+                checkout scm
             }
         }
         stage('OWASP Dependency Check'){
