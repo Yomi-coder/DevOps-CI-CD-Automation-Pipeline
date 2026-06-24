@@ -26,11 +26,11 @@ pipeline{
         stage('SonarQube Analysis'){
             steps{
                 withSonarQubeEnv('sonarqube') {
-                    sh 'sonar-scanner \
+                    def scannerHome = tool 'sonar-scanner'
+                    sh '${scannerHome}/bin/sonar-scanner \
                         -Dsonar.projectKey=full-stack-1 \
                         -Dsonar.sources=. \
-                        -Dsonar.host.url=http://localhost:9000 \
-                        -Dsonar.login=squ_8cf442819d824a72acf72b49ff5e23d87ee8b1ff'
+                        -Dsonar.host.url=http://localhost:9000'
                 }
             }
         }
